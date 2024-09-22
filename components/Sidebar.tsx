@@ -13,7 +13,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
       <nav className="flex flex-col gap-4">
         <Link href="/" className="flex mb-12 cursor-pointer items-center gap-2">
           <Image
-            src="/icons/logo.svg"
+            src="/icons/Websitelogo.png"
             width={34}
             height={34}
             alt="Logo"
