@@ -4,8 +4,12 @@ import TotalBalanceBox from "@/components/TotalBalanceBox";
 import { getLoggedInUser } from "@/lib/actions/user.actions";
 import React from "react";
 
-const Home = async () => {
-  const loggedIn = await getLoggedInUser();
+const Home = () => {
+  const loggedIn = {
+    firstName: "Sahil",
+    lastName: "Ambre",
+    email: "sambre@stevens.edu",
+  };
   return (
     <section className="home">
       <div className="home-content">
@@ -13,7 +17,7 @@ const Home = async () => {
           <HeaderBox
             type="greeting"
             title="Welcome"
-            user={loggedIn?.name || "Guest"}
+            user={loggedIn?.firstName || "Guest"}
             subtext="Access & manage your account and transactions effortlessly."
           />
 
