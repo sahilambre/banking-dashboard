@@ -10,6 +10,7 @@ export const signIn = async ({ email, password }: signInProps) => {
     // Mutation / Databse / Make fetch request
     const { account } = await createAdminClient();
     const response = await account.createEmailPasswordSession(email, password);
+    console.log(response);
 
     return parseStringify(response);
   } catch (error) {
@@ -28,6 +29,7 @@ export const signUp = async (userData: SignUpParams) => {
       password,
       `${firstName} ${lastName}`
     );
+    console.log(newUserAccount);
     const session = await account.createEmailPasswordSession(email, password);
 
     cookies().set("appwrite-session", session.secret, {
@@ -49,6 +51,7 @@ export async function getLoggedInUser() {
   try {
     const { account } = await createSessionClient();
     const user = await account.get();
+    console.log("user: ", user);
     return parseStringify(user);
   } catch (error) {
     return null;
